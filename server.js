@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');//3rd party npm modul za fetchovanje p
 const axios = require("axios");
 const { response } = require("express");
 const { log } = require("console");
+const port = process.env.PORT || 3000;
 
 const app = express();
 app.set("view engine","hbs");
@@ -58,6 +59,6 @@ function fetchLocation(location){
     });
 }
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("Server is running...");
 });
