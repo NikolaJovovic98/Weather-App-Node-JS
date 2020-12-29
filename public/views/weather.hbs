@@ -1,0 +1,20 @@
+{{> header}}
+{{> nav}}
+
+<h1>Weather Page</h1>
+
+ <form action="/weather" method="POST">
+    <label for="location">Location:</label>
+    <input type="text"  name="location" placeholder="Search weather for this location...">
+    <input type="submit" value="Submit">
+  </form>
+
+  {{#if (doesExist location)}}
+  <div class="weather-div">
+    <p>Current temperature in {{location}} is <strong>{{temperature}}°C</strong></p>
+    <img src="../images/{{weather}}.png" alt="Weather Image" title="{{weather}}">
+  </div>  
+  {{else}}
+  {{/if}}
+
+{{> footer}}
